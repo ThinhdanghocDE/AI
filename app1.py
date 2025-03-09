@@ -12,7 +12,7 @@ except Exception as e:
     st.stop()
 
 # Load danh sách features
-FEATURE_FILE = "features.pkl"
+FEATURE_FILE = "features1.pkl"
 try:
     import pickle
     with open(FEATURE_FILE, "rb") as f:
