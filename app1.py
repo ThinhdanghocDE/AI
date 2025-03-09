@@ -21,5 +21,5 @@ for feature in features:
 
 # Khi bấm nút Predict
 if st.button("Dự đoán giá"):
-    prediction = model.predict(\data_input)
+    prediction = model.predict(\value)
     st.success(f"Giá nhà dự đoán: ${prediction[0]:,.2f}")
