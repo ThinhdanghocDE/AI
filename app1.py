@@ -5,26 +5,15 @@ import pickle
 
 # Load mô hình Keras
 MODEL_FILE = "houseprice.keras"  # Đảm bảo tệp này tồn tại trong thư mục làm việc
-try:
     model = tf.keras.models.load_model(MODEL_FILE)
     st.success("✅ Mô hình đã tải thành công!")
-except Exception as e:
-    st.error(f"⚠ Lỗi khi tải mô hình: {e}")
-    st.stop()
 
 # Load danh sách features từ file feature1.pkl
 FEATURE_FILE = "features1.pkl"
-try:
     with open(FEATURE_FILE, "rb") as f:
         features = pickle.load(f)  # Giả sử features là danh sách tên cột
         if not isinstance(features, list):
             raise ValueError("⚠ Lỗi: features1.pkl không chứa danh sách tên cột hợp lệ.")
-except Exception as e:
-    st.error(f"⚠ Lỗi khi tải danh sách features: {e}")
-    st.stop()
-
-# Kiểm tra danh sách features
-st.write(f"📌 Danh sách features: {features}")
 
 st.title("🏠 Dự đoán giá nhà")
 st.write("Nhập thông tin bên dưới để dự đoán giá nhà:")
