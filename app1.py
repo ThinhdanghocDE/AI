@@ -21,6 +21,7 @@ for feature in features:
 
 # Khi bấm nút Predict
 if st.button("Dự đoán giá"):
+    st.write(type(model))
     data_array = np.array(data_input).reshape(1, -1)  # Chuyển dữ liệu thành mảng 2D
     prediction = model.predict(data_array)  # Dự đoán giá nhà
     st.success(f"🏡 Giá nhà dự đoán: ${prediction[0]:,.2f}")
