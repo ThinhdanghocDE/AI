@@ -20,5 +20,4 @@ prediction = clf.predict([[sepal_length, sepal_width, petal_length, petal_width]
 
 # Display prediction
 if st.button("Dự đoán"):
-    prediction = clf.predict(user_input)
     st.write("Kết quả dự đoán:", prediction)
