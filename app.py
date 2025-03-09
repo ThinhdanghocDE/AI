@@ -20,4 +20,4 @@ prediction = clf.predict([[sepal_length, sepal_width, petal_length, petal_width]
 
 # Display prediction
 if st.button("Dự đoán"):
-    st.write("Kết quả dự đoán:", prediction)
+    st.write("Kết quả dự đoán:", iris.target_names[prediction[0]])
